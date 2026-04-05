@@ -47,10 +47,10 @@ setup(
     python_requires=">=3.8",
     extras_require={
         "dev": [
-            "pytest>=7.0",
-            "black",
-            "isort",
-            "flake8",
+            "black==24.8.0",
+            "flake8==7.3.0",
+            "isort==8.0.1",
+            "pytest==9.0.2",
         ]
     },
     ext_modules=[huf0_core_extension],

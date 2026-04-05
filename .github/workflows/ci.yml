@@ -20,7 +20,7 @@ jobs:
           python-version: "3.13"
 
       - name: Install lint tools
-        run: pip install black isort flake8
+        run: pip install -r requirements.txt
 
       - name: black
         run: black --check .
