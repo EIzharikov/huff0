@@ -1,0 +1,3 @@
+[submodule "include/FiniteStateEntropy"]
+	path = include/FiniteStateEntropy
+	url = https://github.com/Cyan4973/FiniteStateEntropy.git
