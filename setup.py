@@ -52,6 +52,7 @@ setup(
             "isort",
             "flake8",
         ]
+    },
     ext_modules=[huf0_core_extension],
     classifiers=[
         "Programming Language :: Python :: 3",
