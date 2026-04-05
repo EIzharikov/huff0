@@ -7,10 +7,10 @@ target-version = ["py39", "py310", "py311", "py312"]
 profile = "black"
 line_length = 88
 
-[tool.flake8]
+[flake8]
 max-line-length = 88
-extend-ignore = ["E203", "W503"]
-exclude = ["venv", "build", "dist", ".eggs", "include"]
+extend-ignore = E203, W503
+exclude = venv, build, dist, .eggs, include
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
