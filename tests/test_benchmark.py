@@ -22,9 +22,13 @@ def benchmark(name: str, data: bytes) -> None:
     print(f"\n{name}")
     print(f"  size        : {size_mb:.1f} MB")
     print(f"  ratio       : {ratio:.4f}  (savings {(1-ratio)*100:.1f}%)")
-    print(f"  compress    : {comp_ms:.1f} ms  ({size_mb / (comp_ms/1000):.0f} MB/s)")
     print(
-        f"  decompress  : {decomp_ms:.1f} ms  ({size_mb / (decomp_ms/1000):.0f} MB/s)"
+        f"  compress    : {comp_ms:.1f} ms \
+            ({size_mb / (comp_ms/1000):.0f} MB/s)"
+        )
+    print(
+        f"  decompress  : {decomp_ms:.1f} ms \
+            ({size_mb / (decomp_ms/1000):.0f} MB/s)"
     )
 
 
