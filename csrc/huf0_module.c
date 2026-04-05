@@ -201,7 +201,9 @@ static PyObject *py_compress(PyObject *self, PyObject *args, PyObject *kwargs) {
             return NULL;
         }
     }
+    Py_BEGIN_ALLOW_THREADS
     for (int t = 0; t < threads; t++) thread_join(tids[t]);
+    Py_END_ALLOW_THREADS
     free(tids);
     MUTEX_DESTROY(ctx.mutex);
 
@@ -414,7 +416,9 @@ static PyObject *py_decompress(PyObject *self, PyObject *args, PyObject *kwargs)
                 goto meta_err;
             }
         }
+        Py_BEGIN_ALLOW_THREADS
         for (int t = 0; t < threads; t++) thread_join(tids[t]);
+        Py_END_ALLOW_THREADS
         free(tids);
         MUTEX_DESTROY(ctx.mutex);
 
