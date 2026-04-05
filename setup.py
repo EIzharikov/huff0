@@ -44,13 +44,13 @@ setup(
     long_description=open("README.md").read() if os.path.exists("README.md") else "",
     long_description_content_type="text/markdown",
     packages=find_packages(include=["huf0", "huf0.*"]),
-    python_requires=">=3.8",
+    python_requires=">=3.10",
     extras_require={
         "dev": [
-            "pytest>=7.0",
-            "black",
-            "isort",
-            "flake8",
+            "black==24.8.0",
+            "flake8==7.3.0",
+            "isort==8.0.1",
+            "pytest==9.0.2",
         ]
     },
     ext_modules=[huf0_core_extension],
