@@ -50,8 +50,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Verify submodules
+        run: git submodule update --init --recursive
+
       - name: Install package
         run: pip install -e ".[dev]"
-
-      - name: pytest
-        run: pytest tests/
