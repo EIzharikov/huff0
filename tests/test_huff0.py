@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-import huff0.huf0 as huf0
+import huf0
 
 
 def test_roundtrip_repetitive():

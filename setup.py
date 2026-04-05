@@ -45,6 +45,13 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(include=["huf0", "huf0.*"]),
     python_requires=">=3.8",
+    extras_require={
+        "dev": [
+            "pytest>=7.0",
+            "black",
+            "isort",
+            "flake8",
+        ]
     ext_modules=[huf0_core_extension],
     classifiers=[
         "Programming Language :: Python :: 3",
