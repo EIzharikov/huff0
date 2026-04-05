@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 
 from setuptools import Extension, find_packages, setup
 
@@ -19,6 +20,14 @@ update_submodules()
 
 FSE_LIB = "include/FiniteStateEntropy/lib"
 
+extra_compile_args = ["-O3", "-Wall"]
+extra_link_args = ["-O3"]
+
+if sys.platform == "win32":
+    extra_compile_args = ["/O2", "/W3"]
+else:
+    extra_link_args.append("-lpthread")
+
 huf0_core_extension = Extension(
     "huf0._huf0_core",
     sources=[
@@ -32,8 +41,8 @@ huf0_core_extension = Extension(
         f"{FSE_LIB}/debug.c",
     ],
     include_dirs=[FSE_LIB, "csrc/"],
-    extra_compile_args=["-O3", "-Wall"],
-    extra_link_args=["-O3"],
+    extra_compile_args=extra_compile_args,
+    extra_link_args=extra_link_args,
 )
 
 setup(
